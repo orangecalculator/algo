@@ -17,7 +17,7 @@ int nodeheap(int *sor, int i, int j, int p){
                 {if(sor[left]>sor[p]) u=left;}
             else if(sor[right]>sor[p]) u=right;
             }
-            
+
         else if(j<left);
         else if(sor[left]>sor[p]) u=left;;
 
@@ -47,9 +47,7 @@ int heapsort(int *sor,int i,int j){
         for(s=(j+i-1)/2;s>=i;s--)downheap(sor,i,j,s);
 int k;
         for(s=j;s>i;s--){
-            for(k=i;k<=j;k++)printf("%d ",sor[k]);printf("\n");
             swap(sor+s,sor+i);
-            for(k=i;k<=j;k++)printf("%d ",sor[k]);printf("\n\n");
             downheap(sor,i,s-1,i);
         }
         return 1;
@@ -60,7 +58,6 @@ int main(){
     scanf("%d",&N);
     int s[1000000];
     for(i=0;i<N;i++) scanf("%d",s+i);
-    for(int k=0;k<N;k++)printf("%d ",s[k]);printf("\n\n");
     clock_t begin=clock();
     heapsort(s,0,N-1);
     clock_t end=clock();
