@@ -9,9 +9,9 @@ int swap(int *swap1,int *swap2){
 }
 
 int downheap(int *sor, int i, int j, int p){
-        int u=p+1,left,right;
+        int u=p,left,right;p++;
         while(p!=u){
-            u=p;
+            p=u;
             left=2*p-i+1;
             right=left+1;
 
@@ -20,9 +20,8 @@ int downheap(int *sor, int i, int j, int p){
                 {if(sor[left]>sor[p]) u=left;}
             else if(sor[right]>sor[p]) u=right;
             }
-
         else if(j<left);
-        else if(sor[left]>sor[p]) u=left;;
+        else if(sor[left]>sor[p]) u=left;
 
         if(p!=u)swap(sor+p,sor+u);
         }
@@ -30,7 +29,7 @@ int downheap(int *sor, int i, int j, int p){
 }
 
 int heapsort(int *sor,int i,int j){
-        int s;
+        int s;int k;
         for(s=(j+i-1)/2;s>=i;s--)downheap(sor,i,j,s);
         for(s=j;s>i;s--){
             swap(sor+s,sor+i);
