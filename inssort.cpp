@@ -22,7 +22,7 @@ int main(){
     inssort(s,0,N-1);
     for(i=0;i<N;i++) printf("%4d %d\n",i+1,s[i]);
     clock_t end = clock();
-    printf("%f\n",(double)(end-begin));
+    printf("TIME: %f\n",(double)(end-begin));
     int yes=1;
     for(i=0;i<N-1;i++) if(s[i+1]<s[i]) yes=0;
     if(yes==1) printf("CLEAR\n"); else printf("ERROR\n");
