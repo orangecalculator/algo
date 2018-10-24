@@ -42,4 +42,10 @@ alpha<-ite[2]
 ##Variance of alpha
   sum(T*exp(alpha)/(1+T*exp(alpha)/theta))^-1
   sqrt(sum(T*exp(alpha)/(1+T*exp(alpha)/theta))^-1)
-  
+
+##Variance of theta
+  nbinf(Y,T,ite[2],ite[1])^-1
+##Approximate Variance of inverse theta by delta method
+##Var(theta)/theta^4
+vary<-(nbinf(Y,T,ite[2],ite[1])^-1)[1]
+sqrt(vary/theta^4)
