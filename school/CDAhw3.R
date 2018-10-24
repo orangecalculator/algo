@@ -1,6 +1,7 @@
 T<-c(404,286,443,169,222,150,321,189,258,223,211,215,108,210,224,211,168,185,158,429,226,150,148)
 Y<-c(308,197,184,149,132,126,110,101,99,81,79,78,68,67,60,57,55,44,38,35,29,20,19)
 
+##initial value for iteration
 alpha<- -1
 theta<-3
 
@@ -26,6 +27,7 @@ nbinf<-function(Y,T,alpha,theta){
 }
 
   ite<-as.matrix(c(theta,alpha))
+  iteold<-100##initial value for iteration
 while(sum(abs(iteold-ite))>1e-8){
   iteold<-ite
   ite<-ite+solve(diag(nbinf(Y,T,ite[2],ite[1])))%*%as.matrix(c(nbdertheta(Y,T,ite[2],ite[1]),nbderalpha(Y,T,ite[2],ite[1])))
@@ -49,3 +51,11 @@ alpha<-ite[2]
 ##Var(theta)/theta^4
 vary<-(nbinf(Y,T,ite[2],ite[1])^-1)[1]
 sqrt(vary/theta^4)
+
+##Plot of Y and Expectation
+## library(tidyverse)
+ggplot()+
+  geom_point(aes(T,Y))+
+  geom_abline(intercept=0,slope=sum(Y)/sum(T),color="blue")
+##Estimation on the poisson model
+(Y-T*sum(Y)/sum(T))/sqrt(T*sum(Y)/sum(T))
