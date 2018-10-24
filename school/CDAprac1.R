@@ -42,3 +42,17 @@ print(paste("correlation statistic: ",r^2 * sum(oa)))
 }
 
 ordtest(oa,sr,sc)
+
+HD<-data.frame(Y=c(24,35,21,30),N=c(1335,603,192,224),x=c(0,2,4,5))
+HD<-mutate(HD,p=Y/(Y+N))
+summary(glm(p~x,gaussian,data=HD))
+summary(glm(p~x,quasibinomial,data=HD))
+summary(glm(p~x,quasibinomial(link="probit"),data=HD))
+
+HDlong<-data.frame()
+for(i in 1:nrow(HD)){HDlong<-rbind(HDlong,cbind(c(rep(1,HD[i,1]),rep(0,HD[i,2])),rep(HD[i,3],HD[i,1]+HD[i,2])))}
+summary(glm(Y~X,gaussian,data=HDlong))
+summary(glm(Y~X,binomial,data=HDlong))
+summary(glm(Y~X,binomial(link="probit"),data=HDlong))
+
+summary(glm(cbind(Y,N)~x,binomial,data=HD))
