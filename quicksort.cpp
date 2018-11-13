@@ -1,6 +1,44 @@
 #include <cstdio>
 #include <time.h>
 
+\\quicksort with index version
+int inssort(int (*sor),int (*ind),int i,int f){
+    int index,j,k,temp,indtemp;
+    for(j=i+1;j<=f;j++){
+         index=i;
+        while(sor[index]<sor[j]) index++;
+        temp=sor[j];indtemp=ind[j];
+        for(k=j;k>index;k--) {sor[k]=sor[k-1];ind[k]=ind[k-1];}
+        sor[index]=temp;ind[index]=indtemp;
+        }
+    return 1;
+}
+
+int quicksort(int *sor,int *ind,int i,int j){
+    if(i>=j) return 0;
+
+    int p=i,q=j,temp;
+    int pivot=sor[(i+j)/2];
+    while(p<=q){
+    while(sor[p]<pivot) p++;
+    while(sor[q]>pivot) q--;
+    if(p<=q){
+    temp=sor[p];
+    sor[p]=sor[q];
+    sor[q]=temp;
+    temp=ind[p];
+    ind[p]=ind[q];
+    ind[q]=temp;
+    p++;q--;
+    }
+    }
+
+    quicksort(sor,ind,i,q);
+    quicksort(sor,ind,p,j);
+
+    return 1;
+}
+
 int inssort(int (*sor),int i,int f){
     int index,j,k,temp;
     for(j=i+1;j<=f;j++){
