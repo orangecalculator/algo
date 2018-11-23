@@ -124,3 +124,78 @@ pchisq(gsq5.4,16-5,lower.tail = F)
 # (b)
 pchisq(0.8,1,lower.tail = F)
 summary(glm(cbind(y,n)~m+b+t,binomial,mbti))
+# (c)
+fit5.4c<-glm(cbind(y,n)~m*b+m*t+m*i+b*t+b*i+t*i,binomial,mbti)
+summary(fit4.16)
+summary(fit5.4c)
+
+modelcomp<-function(fit1,fit2){
+  ind<-ifelse(fit1$deviance>fit2$deviance,1,-1)
+    pchisq((fit1$deviance-fit2$deviance)*ind
+           ,(fit1$df.residual-fit2$df.residual)*ind,lower.tail=F)
+}
+
+modelcomp(fit4.16,fit5.4c)
+
+## 5.6
+# (a)
+prop5.6<-mbti %>%
+  summarize(y=sum(y),n=sum(n),prop=(1+n/y)^-1) %$% prop
+dat5.6<-cbind(mbti,alcohol=fit4.16$fitted.values>prop5.6)
+
+dat5.6 %>%
+  group_by(alcohol) %>%
+  summarize(y=sum(y),n=sum(n)) %>%
+  arrange(desc(alcohol)) %>%
+  select(y,n) %>%
+  apply(2,function(x){c((1+x[2]/x[1])^-1,1-(1+x[2]/x[1])^-1)}) %>%
+  set_rownames(c("PredY","PredN"))
+
+dat5.6 %>%
+  group_by(alcohol) %>%
+  summarize(y=sum(y),n=sum(n)) %>%
+  arrange(desc(alcohol)) %>%
+  select(y,n) %>%
+  summarize(classification=(.[1,1]+.[2,2])/(sum(.)))
+
+## 5.18
+# (a)
+china<-data.frame(y=c(126,35,908,497,913,336,235,58
+                  ,402,121,182,72,60,11,104,21)
+                  ,n=c(100,61,688,807,747,598,172,121
+                  ,308,215,156,98,99,43,89,36)
+                  ,city=factor(rep(c("Beijing","Shanghai","Shenyang","Nanjing"
+                              ,"Harbin","Zhengzhou","Taiyuan","Nanchang"),each=2)
+                              ,levels=c("Nanchang","Beijing","Shanghai","Shenyang","Nanjing"
+                                        ,"Harbin","Zhengzhou","Taiyuan"))
+                  ,smoking=factor(rep(c(T,F),8),levels=c(F,T)))
+chinasim<-china %>%
+  group_by(smoking) %>%
+  summarize(y=sum(y),n=sum(n))
+china
+chinasim
+fit5.18c<-glm(cbind(y,n)~smoking,binomial,chinasim)
+fit5.18s<-glm(cbind(y,n)~smoking+city,binomial,china)
+summary(fit5.18c)
+summary(fit5.18s)
+# (b)
+numfit5.18s<-cbind(fit5.18s$fitted.values,1-fit5.18s$fitted.values)*
+  apply(numdat5.18s<-china%>%select(y,n),1,sum)
+pearchi5.18s<-sum((numdat5.18s-numfit5.18s)^2/numfit5.18s)
+pchisq(pearchi5.18s,16-9,lower.tail = F)
+# (c)
+numtot5.18<-apply(numdat5.18s,1,sum)
+pearres5.18<-(numdat5.18s[,1]-numfit5.18s[,1])/sqrt(numfit5.18s[,1]*(1-fit5.18s$fitted.values))
+weight5.18<-numfit5.18s[,1]*(1-fit5.18s$fitted.values)
+
+datmat5.18<-matrix(c(rep(1,16),rep(1:0,8),rep(0,16*7)),nrow=16)
+for(i in 1:7){
+  datmat5.18[2*i-1,i+2]<-1
+  datmat5.18[2*i,i+2]<-1}
+colnames(datmat5.18)<-c("Intercept","smoking",as.character(china$city[seq(2,14,2)]))
+
+hatmat5.18<-diag(sqrt(weight5.18))%*%datmat5.18%*%
+  solve(t(datmat5.18)%*%diag(weight5.18)%*%datmat5.18)%*%
+  t(datmat5.18)%*%diag(sqrt(weight5.18))
+
+stanres5.18<-pearres5.18/sqrt(diag(hatmat5.18))
