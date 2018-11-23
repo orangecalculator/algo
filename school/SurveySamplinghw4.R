@@ -1,4 +1,3 @@
-library(magrittr)
 ## 9.7
 dat1<-data.frame(Area=factor(1:3,levels=1:3),N=c(46,67,93)
                    ,n=c(9,13,20),y=c(1,2,2))
