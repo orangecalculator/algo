@@ -198,4 +198,5 @@ hatmat5.18<-diag(sqrt(weight5.18))%*%datmat5.18%*%
   solve(t(datmat5.18)%*%diag(weight5.18)%*%datmat5.18)%*%
   t(datmat5.18)%*%diag(sqrt(weight5.18))
 
-stanres5.18<-pearres5.18/sqrt(diag(hatmat5.18))
+stanres5.18<-pearres5.18/sqrt(1-diag(hatmat5.18))
+stanres5.18
