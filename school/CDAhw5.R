@@ -5,10 +5,10 @@ dat6.8<-data.frame(y4=c(28,4,41,12),y3=c(45,12,44,7),y2=c(29,5,20,3),y1=c(26,2,2
                    gender=factor(rep(c("Male","Female"),times=2),levels=c("Female","Male")))
 
 # (a)
-cumfit6.8 <- vglm(cbind(y1,y2,y3,y4)~therapy+gender,cumulative(parallel=T),dat6.8)
+cumfit6.8 <- vglm(cbind(y4,y3,y2,y1)~therapy+gender,cumulative(parallel=T),dat6.8)
 summary(cumfit6.8)
 # (b)
-cumfit6.8A <- vglm(cbind(y1,y2,y3,y4)~therapy*gender,cumulative(parallel=T),dat6.8)
+cumfit6.8A <- vglm(cbind(y4,y3,y2,y1)~therapy*gender,cumulative(parallel=T),dat6.8)
 summary(cumfit6.8A)
 
 ## 7.4
