@@ -1,9 +1,9 @@
 #include <cstdio>
 #include <time.h>
 
-\\quicksort new version 20190131
-int quicksort(int *array,int left,int right){
-    if(left>=right) return 0;
+\\quicksort new version 20190131 bugfix
+void quicksort(int *array,int left,int right){
+    if(left>=right) return;
 
     int temp,pivot;
     
@@ -26,17 +26,16 @@ int quicksort(int *array,int left,int right){
     
     pivot = array[right];
     
-    int i=left,j=right;
+    int i=left,j=right-1;
     
-    while(i<j){
+    while(1){
     while(array[i]<=pivot) ++i;
     while(array[j]>=pivot) --j;
-    if(i<j){
+    if(i>=j) break;
     temp=array[i];
     array[i]=array[j];
     array[j]=temp;
     ++i;--j;
-    }
     }
 
     if(i!=right){
@@ -47,8 +46,6 @@ int quicksort(int *array,int left,int right){
 
     quicksort(array,left,j);
     quicksort(array,i+1,right);
-
-    return 1;
 }
 
 \\quicksort with index version
