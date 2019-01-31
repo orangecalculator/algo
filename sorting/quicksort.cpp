@@ -1,6 +1,56 @@
 #include <cstdio>
 #include <time.h>
 
+\\quicksort new version 20190131
+int quicksort(int *array,int left,int right){
+    if(left>=right) return 0;
+
+    int temp,pivot;
+    
+    if(array[left]>array[right]){
+        temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+    }
+    
+    pivot = (left+right)/2;
+    
+    if(array[pivot]<array[left]) pivot = left;
+    else if(array[pivot]>array[right]) pivot = right;
+    
+    if(pivot!=right){
+        temp = array[pivot];
+        array[pivot] = array[right];
+        array[right] = temp;
+    }
+    
+    pivot = array[right];
+    
+    int i=left,j=right;
+    
+    while(i<j){
+    while(array[i]<=pivot) ++i;
+    while(array[j]>=pivot) --j;
+    if(i<j){
+    temp=array[i];
+    array[i]=array[j];
+    array[j]=temp;
+    ++i;--j;
+    }
+    }
+
+    if(i!=right){
+        temp = array[i];
+        array[i] = array[right];
+        array[right] = temp;
+    }
+
+    quicksort(array,left,j);
+    quicksort(array,i+1,right);
+
+    return 1;
+}
+
 \\quicksort with index version
 int inssort(int (*sor),int (*ind),int i,int f){
     int index,j,k,temp,indtemp;
