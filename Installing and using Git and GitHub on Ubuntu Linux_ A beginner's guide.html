@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/ -->
+<html id="XenForo" lang="en-US" dir="LTR" class="Public LoggedOut Sidebar Responsive hasJs NoTouch HasDragDrop gr__howtoforge_com" xmlns:fb="http://www.facebook.com/2008/fbml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<base href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/">--><base href=".">
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/cb=gapi.loaded_1" async=""></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/cb=gapi(1).loaded_0" async=""></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/sdk.js.다운로드" async="" crossorigin="anonymous"></script><script async="" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/analytics.js.다운로드"></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f.txt"></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/pubads_impl_rendering_319.js.다운로드"></script><script type="text/javascript" async="" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/recaptcha__en.js.다운로드"></script><script>
+			var _b = document.getElementsByTagName('base')[0], _bH = "https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/";
+			if (_b && _b.href != _bH) _b.href = _bH;
+		</script>
+<title>Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide</title>
+<meta name="description" content="This tutorial will be a quick setup guide for installing and using GitHub and how to perform its various functions of creating a local repository and connecting this repo to the remote host, committing the changes and finally pushing all the content from the local system to GitHub.">
+<meta property="og:title" content="Installing and using Git and GitHub on Ubuntu Linux: A beginner&#39;s guide">
+<meta property="og:description" content="This tutorial will be a quick setup guide for installing and using GitHub and how to perform its various functions of creating a local repository and connecting this repo to the remote host, committing the changes and finally pushing all the content from the local system to GitHub.">
+<meta property="og:site_name" content="HowtoForge">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@howtoforgecom">
+<meta name="twitter:creator" content="@howtoforgecom">
+<meta name="twitter:title" content="Installing and using Git and GitHub on Ubuntu Linux: A beginner&#39;s guide">
+<meta name="twitter:description" content="This tutorial will be a quick setup guide for installing and using GitHub and how to perform its various functions of creating a local repository and connecting this repo to the remote host, committing the changes and finally pushing all the content from the local system to GitHub.">
+<link rel="alternate" href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/" hreflang="en">
+<link rel="canonical" href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/">
+<link rel="amphtml" href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/amp/">
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Article",
+  "name" : "Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide",
+  "author" : {
+    "@type" : "Person",
+    "name" : "Akshay Pai"
+  },
+  "articleSection" : "linux,programming,ubuntu",
+  "url" : "https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "Howtoforge"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/font-awesome.min.css">
+<link href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/css" rel="stylesheet" type="text/css">
+<link href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/xf.css" rel="stylesheet">
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/jquery-1.11.3.min.js.다운로드"></script>
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/xenforo.js.다운로드"></script>
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/zloader.js.다운로드"></script>
+<script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/jquery.mousewheel-3.0.4.pack.js.다운로드"></script>
+<script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/jquery.fancybox-1.3.4.pack.js.다운로드"></script>
+<link rel="stylesheet" type="text/css" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/jquery.fancybox-1.3.4.css" media="screen">
+<link href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/style.min.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="RSS-Feed für Howtoforge" href="https://www.howtoforge.com/feed.rss">
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/tinymce.min.js.다운로드"></script>
+
+<script type="text/javascript">
+var gaProperty = 'UA-2155872-1';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+window[disableStr] = true;
+}
+function gaOptout() {
+document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+window[disableStr] = true;
+alert('Google Ananlyitics tracking has been disabled in this browser.');
+}
+</script>
+<script async="async" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/gpt.js.다운로드"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+	googletag.defineSlot('/1030080/howtoforge_com_list_sidebar_top', [300, 250], 'div-gpt-ad-1527185271042-4').addService(googletag.pubads());
+    googletag.defineSlot('/1030080/howtoforge_com_list_content_middle', [[300, 250], [336, 280]], 'div-gpt-ad-1527185271042-5').addService(googletag.pubads());
+    googletag.defineSlot('/1030080/howtoforge_com_article_rectangle_a_300x250', [300, 250], 'div-gpt-ad-1527185271042-6').addService(googletag.pubads());
+    googletag.defineSlot('/1030080/howtoforge_com_article_rectangle_b_300x250', [300, 250], 'div-gpt-ad-1527185271042-7').addService(googletag.pubads());
+    googletag.defineSlot('/1030080/howtoforge_com_article_leaderboard_b_728x90', [728, 90], 'div-gpt-ad-1527185271042-1').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+
+<script async="" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(1).txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3043223216276099",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website, analyze site traffic and show you relevant ads.","dismiss":"Got it!","learnMore":"More info","link":"https://www.howtoforge.com/community/help/cookies","theme":"dark-bottom"};
+</script>
+<script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/cookieconsent.latest.min.js.다운로드"></script>
+
+<link rel="preload" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(2).txt" as="script"><script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(2).txt"></script><link rel="preload" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(3).txt" as="script"><script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(3).txt"></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/pubads_impl_319.js.다운로드" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-32/html/container.html"><script id="_bsa_srv-CKYD55QU_0" type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/CKYD55QU.json"></script><script async="" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/client_plusone.js.다운로드" gapi_processed="true"></script><script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/sdk.js(1).다운로드" async=""></script><link rel="stylesheet" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/skin.min.css"><link rel="stylesheet" type="text/css" href="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/dark-bottom.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body data-gr-c-s-loaded="true"><div class="cc_banner-wrapper "><div class="cc_banner cc_container cc_container--open"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#null" data-cc-event="click:dismiss" class="cc_btn cc_btn_accept_all">Got it!</a><p class="cc_message">This website uses cookies to ensure you get the best experience on our website, analyze site traffic and show you relevant ads. <a data-cc-if="options.link" class="cc_more_info" href="https://www.howtoforge.com/community/help/cookies">More info</a></p><a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">Cookie Consent plugin for the EU cookie law</a></div></div>
+<div id="loginBar">
+<div class="pageWidth">
+<div class="pageContent">
+<h3 id="loginBarHandle">
+<label for="LoginControl"><a href="https://www.howtoforge.com/community/login/" class="concealed noOutline">Log in or Sign up</a></label>
+</h3>
+<span class="helper"></span>
+<form action="https://www.howtoforge.com/community/login/login?redirect=/tutorial/install-git-and-github-on-ubuntu/" method="post" class="xenForm eAuth" id="login" style="display:none">
+<ul id="eAuthUnit">
+<li><a href="https://www.howtoforge.com/community/register/facebook?reg=1" class="fbLogin" tabindex="110"><span>Log in with Facebook</span></a></li>
+<li><a href="https://www.howtoforge.com/community/register/twitter?reg=1" class="twitterLogin" tabindex="110"><span>Log in with Twitter</span></a></li>
+<li><span class="googleLogin GoogleLogin JsOnly" tabindex="110" data-client-id="198773272284-b6tfk0c28bje81p774prrcrkq9jb3o44.apps.googleusercontent.com" data-redirect-url="/community/register/google?code=__CODE__&amp;csrf=hVMXbW_3rnrmq4Em" data-gapiattached="true"><span>Log in with Google</span></span></li>
+</ul>
+<div class="ctrlWrapper">
+<dl class="ctrlUnit">
+<dt><label for="LoginControl">Your name or email address:</label></dt>
+<dd><input type="text" name="login" id="LoginControl" class="textCtrl" tabindex="101"></dd>
+</dl>
+<dl class="ctrlUnit">
+<dt>
+<label for="ctrl_password">Do you already have an account?</label>
+</dt>
+<dd>
+<ul>
+<li><label for="ctrl_not_registered"><input type="radio" name="register" value="1" id="ctrl_not_registered" tabindex="105">
+No, create an account now.</label></li>
+<li><label for="ctrl_registered"><input type="radio" name="register" value="0" id="ctrl_registered" tabindex="105" checked="checked" class="Disabler">
+Yes, my password is:</label></li>
+<li id="ctrl_registered_Disabler">
+<input type="password" name="password" class="textCtrl" id="ctrl_password" tabindex="102">
+<div class="lostPassword"><a href="https://www.howtoforge.com/community/lost-password/" tabindex="106">Forgot your password?</a></div>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="ctrlUnit submitUnit">
+<dt></dt>
+<dd>
+<input type="submit" class="button primary" value="Log in" tabindex="104" data-loginphrase="Log in" data-signupphrase="Sign up">
+<label for="ctrl_remember" class="rememberPassword"><input type="checkbox" name="remember" value="1" id="ctrl_remember" tabindex="103"> Stay logged in</label>
+</dd>
+</dl>
+</div>
+<input type="hidden" name="cookie_check" value="1">
+<input type="hidden" name="redirect" value="/community/">
+<input type="hidden" name="_xfToken" value="">
+</form></div>
+</div>
+</div>
+<header>
+<div id="header">
+<div id="logoBlock">
+<div class="pageWidth">
+<div class="pageContent">
+<div id="logo"><a href="https://www.howtoforge.com/">
+<span></span>
+<img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/howtoforge_logo_trans.webp" alt="Howtoforge" style="margin-left:20px;">
+</a></div>
+<span class="helper"></span>
+</div>
+</div>
+</div>
+<div id="navigation" class="pageWidth withSearch">
+<div class="pageContent">
+<nav>
+<div class="navTabs">
+<ul class="publicTabs">
+
+<li class="navTab forums selected">
+<a href="https://www.howtoforge.com/" class="navLink">Tutorials</a>
+<div class="tabLinks forumsTabLinks">
+<ul class="secondaryContent blockLinksList">
+<li><a href="https://www.howtoforge.com/search/">Tutorial search</a></li>
+</ul>
+</div>
+</li>
+<li class="navTab forums PopupClosed">
+<a href="https://www.howtoforge.com/tutorials/" class="navLink">Tags</a>
+</li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/community/" class="navLink">Forums</a></li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/linux-commands/" class="navLink">Linux Commands</a></li>
+<li class="navTab forums PopupClosed"><a href="https://www.howtoforge.com/subscription/" class="navLink">Subscribe</a></li>
+<li class="navTab forums PopupClosed"><a href="http://www.ispconfig.org/" class="navLink">ISPConfig</a></li>
+<li class="navTab forums PopupClosed"><a href="http://www.lxer.com/" class="navLink">News</a></li>
+</ul>
+</div>
+<span class="helper"></span>
+</nav>
+</div>
+</div>
+<div id="searchBar" class="pageWidth">
+<span id="QuickSearchPlaceholder" title=" Search..."> Search</span>
+<fieldset id="QuickSearch">
+<form action="https://www.howtoforge.com/" method="post" class="formPopup">
+<div class="primaryControls">
+
+<input type="search" name="q" value="" class="textCtrl" placeholder="Search..." results="0" title="Enter your search and hit enter..." id="QuickSearchQuery">
+
+</div>
+<input type="hidden" name="_xfToken" value="">
+</form>
+</fieldset>
+</div>
+</div>
+</header>
+<div id="content" class="forum_list">
+<div class="pageWidth">
+<div class="pageContent">
+
+<div class="mainContainer">
+<div class="mainContent">
+
+<div class="breadBoxTop">
+<nav>
+<fieldset class="breadcrumb" style="">
+<span class="crumbs">
+<span class="crust homeCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Home</span></a>
+<span class="arrow"><span></span></span>
+</span>
+<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide</span></a>
+<span class="arrow"><span>&gt;</span></span>
+</span>
+</span>
+</fieldset>
+</nav>
+</div>
+
+<div id="htfContentPage">
+<div class="bsa-apiads"><a href="https://ispprotect.com/?pk_campaign=htftxt" target="_blank" rel="nofollow">Scan your Web-Server for Malware with ISPProtect now. Get Free Trial.</a></div>
+<article>
+<h1>Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide</h1>
+<div class="contributeEdit" style="float:right; width:450px; max-width:100%;">
+<div id="tocContainer">
+<h3>On this page</h3>
+<ol class="toc">
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-installing-git-for-linux">1 Installing Git for Linux</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-configuring-github">2 Configuring GitHub</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-creating-a-local-repository">3 Creating a local repository</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-creating-a-readme-file-to-describe-the-repository">4 Creating a README file to describe the repository</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-adding-repository-files-to-an-index">5 Adding repository files to an index</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-committing-changes-made-to-the-index">6 Committing changes made to the index</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-creating-a-repository-on-github">7 Creating a repository on GitHub</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#-pushing-files-in-local-repository-to-github-repository">8 Pushing files in local repository to GitHub repository</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#links">Links</a></li>
+</ol>
+</div>
+</div>
+<p>GitHub is a treasure trove of some of the world's best projects, built by the contributions of developers all across the globe. This simple, yet extremely powerful platform helps every individual interested in building or developing something big to contribute and get recognized in the open source community.</p>
+<p>This tutorial&nbsp;is a quick setup guide for installing and using GitHub and how to perform its various functions of creating a repository locally, connecting this repo to the remote host that contains your project (where everyone can see), committing the changes and finally pushing all the content in the local system to GitHub.</p><div style="width:336px;float:left; margin: 10px 15px 10px 0px;background-color:white;">
+
+<div id="div-gpt-ad-1527185271042-6" style="height: 250px; width: 300px;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527185271042-6'); });
+</script>
+<div id="google_ads_iframe_/1030080/howtoforge_com_article_rectangle_a_300x250_0__container__" style="border: 0pt none; width: 300px; height: 250px;"></div></div>
+</div>
+<p>Please note that this tutorial assumes that you have a basic knowledge of the terms used in Git such as push, pull requests, commit, repository, etc. It also requires you to register to GitHub <a href="https://github.com/">here</a> and make a note of your GitHub username. So let's begin:</p>
+<h2 id="-installing-git-for-linux">1 Installing Git for Linux</h2>
+<p>Download and install Git for Linux:</p>
+<pre class="command"><code spellcheck="false">sudo apt-get install git</code></pre>
+<p>The above command is for Ubuntu and works on all Recent Ubuntu versions, tested from Ubuntu 16.04 to Ubuntu&nbsp;18.04 LTS (Bionic Beaver) and it's likely to work the same way on future versions.</p>
+<h2 id="-configuring-github">2 Configuring GitHub</h2>
+<p>Once the installation has successfully completed, the next thing to do is to set up the configuration details of the GitHub user. To do this use the following two commands by replacing "user_name" with your GitHub username and replacing "email_id" with your email-id you used to create your GitHub account.</p>
+<pre class="command"><code spellcheck="false">git config --global user.name "user_name"</code></pre>
+<pre class="command"><code spellcheck="false">git config --global user.email "email_id"</code></pre>
+<p>The following image shows an example of my configuration with my "user_name" being "akshaypai" and my "email_id" being "abc123@gmail.com"</p>
+<p style="text-align: center;"><a class="fancybox" id="img-config" href="https://www.howtoforge.com/images/ubuntu_github_getting_started/big/config.png"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/config.webp" alt="Git config" width="550" height="104"></a></p>
+<h2 id="-creating-a-local-repository">3 Creating a local repository</h2>
+<p>Create a folder on your system. This will serve as a local repository which will later be pushed onto the GitHub website. Use the following command:</p>
+<pre class="command"><code spellcheck="false">git init Mytest</code></pre>
+<p>If the repository is created successfully, then you will get the following line:</p>
+<pre class="system"><code spellcheck="false">Initialized empty Git repository in /home/akshay/Mytest/.git/</code></pre>
+<p>This line may vary depending on your system.</p>
+<p>So here, Mytest is the folder that is created and "init" makes the folder a GitHub repository. Change the directory to this newly created folder:</p>
+<pre class="command"><code spellcheck="false">cd Mytest</code></pre>
+<h2 id="-creating-a-readme-file-to-describe-the-repository">4 Creating a README file to describe the repository</h2>
+<p>Now create a README file and enter some text like "this is a git setup on Linux". The README file is generally used to describe what the repository contains or what the project is all about. Example:</p>
+<pre class="command"><code spellcheck="false">gedit README</code></pre>
+<p>You can use any other text editors. I use gedit. The content of the README file will be:</p>
+<pre class="system"><code spellcheck="false">This is a git repo</code></pre>
+<h2 id="-adding-repository-files-to-an-index">5 Adding repository files to an index</h2>
+<p>This is an important step. Here we add all the things that need to be pushed onto the website into an index. These things might be the text files or programs that you might add for the first time into the repository or it could be adding a file that already exists but with some changes (a newer version/updated version).</p>
+<p>Here we already have the README file. So, let's create another file which contains a simple C program and call it sample.c. The contents of it will be:</p>
+<pre> 
+#include&lt;stdio.h&gt;
+int main()
+{
+printf("hello world");
+return 0;
+}
+</pre>
+<p>So, now that we have 2 files</p>
+<pre class="system"><code spellcheck="false">README and sample.c</code></pre>
+<p>add it to the index by using the following 2 commands:</p>
+<pre class="command"><code spellcheck="false">git add README</code></pre>
+<pre class="command"><code spellcheck="false">git add smaple.c</code></pre>
+<p>Note that the "git add" command can be used to add any number of files and folders to the index. Here, when I say index, what I am referring to is a buffer like space that stores the files/folders that have to be added into the Git repository.</p>
+<h2 id="-committing-changes-made-to-the-index">6 Committing changes made to the index</h2>
+<p>Once all the files are added, we can commit it. This means that we have finalized what additions and/or changes have to be made and they are now ready to be uploaded to our repository. Use the command :</p>
+<pre class="command"><code spellcheck="false">git commit -m "some_message"</code></pre>
+<p>"some_message" in the above command can be any simple message like "my first commit" or "edit in readme", etc.</p>
+<h2 id="-creating-a-repository-on-github">7 Creating a repository on GitHub</h2>
+<p>Create a repository on GitHub. Notice that the name of the repository should be the same as the repository's on the local system. In this case, it will be "Mytest". To do this login to your account on https://github.com. Then click on the "plus(+)" symbol at the top right corner of the page and select "create new repository". Fill the details as shown in the image below and click on "create repository" button.</p>
+<p style="text-align: center;"><a class="fancybox" id="img-details" href="https://www.howtoforge.com/images/ubuntu_github_getting_started/big/details.png"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/details.webp" alt="Creating a repository on GitHub" width="550" height="393"></a></p>
+<p>Once this is created, we can push the contents of the local repository onto the GitHub repository in your profile. Connect to the repository on GitHub using the command:</p>
+<p><span class="highlight">Important Note:</span> Make sure you replace 'user_name' and 'Mytest' in the path with your Github username and folder before running the command!</p>
+<pre class="command"><code spellcheck="false">git remote add origin https://github.com/user_name/Mytest.git</code></pre>
+<h2 id="-pushing-files-in-local-repository-to-github-repository">8 Pushing files in local repository to GitHub repository</h2>
+<p>The final step is to push the local repository contents into the remote host repository (GitHub), by using the command:</p>
+<pre class="command"><code spellcheck="false">git push origin master</code></pre>
+<p>Enter the login credentials [user_name and password].</p>
+<p>The following image shows the procedure from step 5 to step 8</p>
+<p style="text-align: center;"><a class="fancybox" id="img-steps" href="https://www.howtoforge.com/images/ubuntu_github_getting_started/big/steps.png"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/steps.png" alt="Pushing files in local repository to GitHub repository" width="550" height="300"></a></p>
+<p>So this adds all the contents of the 'Mytest' folder (my local repository) to GitHub. For subsequent projects or for creating repositories, you can start off with step 3 directly. Finally, if you log in to your GitHub account and click on your Mytest repository, you can see that the 2 files README and sample.c have been uploaded and are visible to all as shown in the following image.</p>
+<p style="text-align: center;"><a class="fancybox" id="img-final" href="https://www.howtoforge.com/images/ubuntu_github_getting_started/big/final.png"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/final.webp" alt="Content uploaded to Github" width="550" height="378"></a></p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://git-scm.com/">Git - Source Version Control System</a></li>
+<li><a href="http://github.com/">Github</a></li>
+</ul>
+</article>
+<div style="height:30px; margin-top:20px;">
+<p style="text-align:right;"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/pdficon_small.webp"> <a class="pdf-btn" href="javascript:void(0);">view as pdf</a> | <img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/print.webp"> <a class="print-btn" href="javascript:void(0);">print</a></p>
+</div>
+<div style="height:30px; margin-top:20px;">
+<div style="float:left;"><b>Share this page:</b></div>
+<p style="text-align:center;">
+<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F" target="_blank" rel="nofollow"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-recommend.webp" height="20"></a>
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F&amp;text=Installing+and+using+Git+and+GitHub+on+Ubuntu+Linux%3A+A+beginner%27s+guide&amp;via=howtoforgecom&amp;related=howtoforgecom" target="_blank" rel="nofollow"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-tweet.webp" height="20"></a>
+<a href="https://twitter.com/howtoforgecom/" target="_blank" rel="nofollow"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-follow.webp" height="20"></a>
+<a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F" target="_blank" rel="nofollow"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-gplus.webp" height="20"></a>
+</p>
+</div>
+</div>
+
+
+<div id="htfContentPagePaging">
+<h2>Suggested articles</h2>
+<script async="" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(1).txt"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-3043223216276099" data-ad-slot="8940054090"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+<div id="htfContentPageComment">
+<a name="comments"></a>
+<h2>99 Comment(s)</h2>
+
+<div id="commentform">
+<div class="commentContainerHead" style="font-size:18px;">Add comment</div>
+<div class="commentContainer">
+<form method="post" action="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#comments">
+<input type="hidden" name="reply_to" id="reply-to-comment" value="0">
+<div id="commentFormDetail">
+<div style="width:48%; float:left; margin-right:3%">
+<label for="commentname">Name *</label>
+<input id="commentname" name="commentname" value="">
+</div>
+<div style="width:48%;float:left;">
+<label for="commentname">Email *</label>
+<input id="commentemail" name="commentemail" value="">
+</div>
+<div style="clear:both;"></div>
+</div>
+<div id="mceu_5" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_5-body" class="mce-container-body mce-stack-layout"><div id="mceu_6" class="mce-toolbar-grp mce-container mce-panel mce-first mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"><div id="mceu_6-body" class="mce-container-body mce-stack-layout"><div id="mceu_7" class="mce-container mce-toolbar mce-first mce-last mce-stack-layout-item" role="toolbar"><div id="mceu_7-body" class="mce-container-body mce-flow-layout"><div id="mceu_8" class="mce-container mce-first mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_8-body"><div id="mceu_0" class="mce-widget mce-btn mce-first mce-disabled" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Undo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_1" class="mce-widget mce-btn mce-last mce-disabled" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Redo" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div></div></div><div id="mceu_9" class="mce-container mce-last mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_9-body"><div id="mceu_2" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_3" role="button" aria-label="Italic"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_4" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_4" role="button" aria-label="Insert/edit link"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div></div></div></div></div></div></div><div id="mceu_10" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="commentedit_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" src="javascript:&quot;&quot;" style="width: 100%; height: 100px; display: block;" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/saved_resource.html"></iframe></div><div id="mceu_11" class="mce-statusbar mce-container mce-panel mce-last mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_11-body" class="mce-container-body mce-flow-layout"><div id="mceu_12" class="mce-path mce-first mce-flow-layout-item"><div role="button" class="mce-path-item mce-last" data-index="0" tabindex="-1" id="mceu_12-0" aria-level="0">p</div></div><div id="mceu_13" class="mce-last mce-flow-layout-item mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea id="commentedit" name="commentedit" style="width: auto; display: none;" aria-hidden="true"></textarea>
+<div>
+<div style="float:left;">
+<div class="g-recaptcha" data-sitekey="6LdX9fUSAAAAALWwVoPdeXScMSketz4npF-0QcQ1"><div style="width: 304px; height: 78px;"><div><iframe src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/anchor.html" width="304" height="78" role="presentation" name="a-rti3n9z1uohw" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+<script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/api.js.다운로드">
+      </script>
+</div>
+<div style="margin-top:10px;margin-bottom:10px;">
+<input type="submit" name="submit" class="button primary" style="float:right;" value="Submit comment">
+</div>
+<div style="clear:both;"></div>
+</div>
+<script>
+	tinymce.init({
+		selector: "textarea#commentedit",
+		theme: "modern",
+		height: 100,
+		apply_source_formatting : true,
+		remove_linebreaks : false,
+		menubar : false,
+		/*auto_focus : "commentedit",*/
+		plugins: [
+		"link"
+		],
+		/*plugins: [
+			"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+			"save table contextmenu directionality emoticons template paste textcolor"
+		],*/
+		content_css: "https://www.howtoforge.com/themes/howtoforge/css/custom.css",
+		toolbar: "undo redo | bold italic link", 
+		/*style_formats: [
+			{title: 'Bold text', inline: 'b'},
+			{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+			{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+			{title: 'Example 1', inline: 'span', classes: 'example1'},
+			{title: 'Example 2', inline: 'span', classes: 'example2'},
+			{title: 'Table styles'},
+			{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+		]*/
+	}); 
+	</script>
+</form>
+</div>
+</div>
+
+<h3>Comments</h3>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> nwnpallewela <b>at:</b> <i>2015-02-19 05:24:43</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15296" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15296" class="commentContainer commentLevel0">
+<p></p><p>This is great... Thanks for your help :)</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Feragon <b>at:</b> <i>2015-04-01 15:37:52</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15573" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15573" class="commentContainer commentLevel0">
+<p></p><p>Thanks a LOT!!! Very usefull tuto, and very simple. Thanks again.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Deepak Kanavikar <b>at:</b> <i>2015-04-03 18:06:59</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15583" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15583" class="commentContainer commentLevel0">
+<p></p><p>This was precisely what i was looking for... Thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> ashutoshh <b>at:</b> <i>2015-04-13 04:01:17</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15640" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15640" class="commentContainer commentLevel0">
+<p></p><p>thanks a lot</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> honlulu <b>at:</b> <i>2015-04-15 15:51:50</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15654" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15654" class="commentContainer commentLevel0">
+<p></p><p>&lt;h1&gt; very helpful xD Thanks a lot &lt;/h1&gt;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> karan <b>at:</b> <i>2015-05-11 13:03:31</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15871" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15871" class="commentContainer commentLevel0">
+<p></p><p>awesome , thank you</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Chris <b>at:</b> <i>2015-05-21 08:42:31</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="15980" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment15980" class="commentContainer commentLevel0">
+<p></p><p>Thank you!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> auchomage <b>at:</b> <i>2015-06-05 12:58:16</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16117" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16117" class="commentContainer commentLevel0">
+<p></p><p>Thanks for this, it is very clear and helpful.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> vartika <b>at:</b> <i>2015-07-16 07:13:07</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16387" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16387" class="commentContainer commentLevel0">
+<p></p><p>thank you very much for such a clear and concise tutorial! :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> saurabh <b>at:</b> <i>2015-08-04 12:56:46</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16523" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16523" class="commentContainer commentLevel0">
+<p></p><p>Thanks a lot, really very helpful.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Rajani <b>at:</b> <i>2015-08-17 05:34:44</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16623" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16623" class="commentContainer commentLevel0">
+<p></p><p>Very helpful. Thank you very much</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Kishor <b>at:</b> <i>2015-08-24 06:49:59</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16667" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16667" class="commentContainer commentLevel0">
+<p></p><p>Best..</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> goldie <b>at:</b> <i>2015-09-18 09:08:06</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16850" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16850" class="commentContainer commentLevel0">
+<p></p><p>awesome... spent so much time but did not get... but with this tutorial... its really easy.. thank u</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> jeet <b>at:</b> <i>2015-10-01 05:51:01</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="16957" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment16957" class="commentContainer commentLevel0">
+<p></p><p>awesome easy to understand.....</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> swayne <b>at:</b> <i>2015-10-15 20:48:52</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17064" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17064" class="commentContainer commentLevel0">
+<p></p><p>Very nice, concise beginners tutorial!&nbsp; FYI... one little typo found... In section 5: git add smaple.c&nbsp; (should be "sample.c")</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> maitreyee <b>at:</b> <i>2015-11-03 06:03:47</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17184" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17184" class="commentContainer commentLevel0">
+<p></p><p>Extremely helpful. I followed it step by step and I got exactly what I wanted</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Jerry <b>at:</b> <i>2015-12-04 08:22:32</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17453" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17453" class="commentContainer commentLevel0">
+<p></p><p>Bravo!!!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> neil <b>at:</b> <i>2015-12-09 07:05:10</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17512" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17512" class="commentContainer commentLevel0">
+<p></p><p>Awesome&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Bilal <b>at:</b> <i>2015-12-09 12:21:37</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17517" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17517" class="commentContainer commentLevel0">
+<p></p><p>Thank you so much</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Bilal <b>at:</b> <i>2015-12-09 12:26:25</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17518" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17518" class="commentContainer commentLevel0">
+<p></p><p>one more thing friends, suppose someone get any issue in&nbsp; git push origin master </p>
+<p>please use this git push origin master --force its work for me</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> jorge8979787 <b>at:</b> <i>2016-01-21 22:01:40</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="17880" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment17880" class="commentContainer commentLevel0">
+<p></p><p>thanks!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Luna Das <b>at:</b> <i>2016-02-05 08:09:57</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18012" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18012" class="commentContainer commentLevel0">
+<p></p><p>nice article that what I was looking for :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Murat Ersin <b>at:</b> <i>2016-02-14 16:51:32</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18077" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18077" class="commentContainer commentLevel0">
+<p></p><p>It's work so great.Thanks for this tutorial.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> om <b>at:</b> <i>2016-03-02 04:37:53</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18237" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18237" class="commentContainer commentLevel0">
+<p></p><p>This is very cool tuto, love it.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Chichio <b>at:</b> <i>2016-03-16 10:38:10</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18345" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18345" class="commentContainer commentLevel0">
+<p></p><p>Thanks. But i must run command: git pull origin master before git push origin masterI'm newbie</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Chatchai Saratakij <b>at:</b> <i>2016-04-06 15:42:32</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18499" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18499" class="commentContainer commentLevel0">
+<p></p><p>Wow, Thank you^_^</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> luan <b>at:</b> <i>2016-04-07 22:48:23</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18512" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18512" class="commentContainer commentLevel0">
+<p></p><p>how to integrate postgresql to github?&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Shradha <b>at:</b> <i>2016-04-11 11:26:38</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18551" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18551" class="commentContainer commentLevel0">
+<p></p><p>Thank you so much..This is the most precisely explained tutorial...:)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Kautsya Kanu <b>at:</b> <i>2016-04-20 07:14:09</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18620" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18620" class="commentContainer commentLevel0">
+<p></p><p>Best Tutorial that I found.. Thanks a lot!! :) You are really great..</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> yohannes <b>at:</b> <i>2016-04-20 07:57:22</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18621" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18621" class="commentContainer commentLevel0">
+<p></p><p>Thanks that will help for starters like me.</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Jacob <b>at:</b> <i>2016-04-28 15:08:57</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18712" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18712" class="commentContainer commentLevel0">
+<p></p><p>&nbsp;This was great, but I initially received a error when I tried the&nbsp;git push origin master.&nbsp;</p>
+<p>The error looks something like this: fatal: unable to access 'https://github.gatech.edu/jc89x0/SevFiewk.git/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none</p>
+<p>I believe it is a certificate trust issue, but the fix for me was to enter the following commands (ref:&nbsp;http://stackoverflow.com/questions/21181231/server-certificate-verification-failed-cafile-etc-ssl-certs-ca-certificates-c)</p>
+export GIT_SSL_NO_VERIFY=1
+#or
+git config --global http.sslverify falseAfterwards, I am presented with an option to provide my username and password. &nbsp;&nbsp;<p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Shashikant Singh <b>at:</b> <i>2016-05-25 09:59:49</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="18994" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment18994" class="commentContainer commentLevel0">
+<p></p><p>Very good tutorial . Very clean explaination.&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Devashish Kumar Jaiswal <b>at:</b> <i>2016-06-28 11:01:07</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19301" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19301" class="commentContainer commentLevel0">
+<p></p><p>Thanks a lot..This is very helpful for everyone</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Tingu <b>at:</b> <i>2016-08-06 05:24:54</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19614" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19614" class="commentContainer commentLevel0">
+<p></p><p>Nice One Article</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Tingu <b>at:</b> <i>2016-08-06 05:26:04</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19615" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19615" class="commentContainer commentLevel0">
+<p></p><p>&nbsp;Masaalla article</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Zakki <b>at:</b> <i>2016-08-07 13:54:24</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19621" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19621" class="commentContainer commentLevel0">
+<p></p><p>Excellent tuto!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Graham Newman <b>at:</b> <i>2016-08-29 15:14:45</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19778" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19778" class="commentContainer commentLevel0">
+<p></p><p>Brilliant - many thanks!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ravi Kumar <b>at:</b> <i>2016-09-05 06:57:45</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19833" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19833" class="commentContainer commentLevel0">
+<p></p><p>That's great...Thankyou sir</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ishadi <b>at:</b> <i>2016-09-06 23:54:53</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19856" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19856" class="commentContainer commentLevel0">
+<p></p><p>Thanks a lot!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> subhajyoti <b>at:</b> <i>2016-09-15 20:18:23</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19941" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19941" class="commentContainer commentLevel0">
+<p></p><p>too good</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Nisal <b>at:</b> <i>2016-09-21 10:33:47</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="19992" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment19992" class="commentContainer commentLevel0">
+<p></p><p>This is great... Thanks for your help :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Kevin <b>at:</b> <i>2016-09-24 20:31:47</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20016" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20016" class="commentContainer commentLevel0">
+<p></p><p>That's amazing. The best hands on beginner's guide to git. It isn't much of a big deal. Thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Nikhil Chavda <b>at:</b> <i>2016-09-25 07:44:03</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20018" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20018" class="commentContainer commentLevel0">
+<p></p><p>this tutorial is very usefull for me thank you so much.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> ahahah <b>at:</b> <i>2016-10-01 09:21:02</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20103" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20103" class="commentContainer commentLevel0">
+<p></p><p>This was soooo helpfull. Thank you soooo much. :))</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Victor <b>at:</b> <i>2016-10-11 17:12:18</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20211" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20211" class="commentContainer commentLevel0">
+<p></p><p>Thanks for this , I never thought it was so simple, you helpme so much</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> WRONG! <b>at:</b> <i>2016-10-15 01:21:21</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20249" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20249" class="commentContainer commentLevel0">
+<p></p><p>remote add orgin, not add remote origin</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Irishologram <b>at:</b> <i>2016-10-26 12:02:34</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20351" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20351" class="commentContainer commentLevel0">
+<p></p><p>I just followed this tutorial and create a new github repository, thank you!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> KC <b>at:</b> <i>2016-11-25 20:13:05</i></div>
+ <div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20592" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20592" class="commentContainer commentLevel0">
+<p></p><p>Thank You! This has been of real help.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> murali <b>at:</b> <i>2016-12-05 15:56:47</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20663" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20663" class="commentContainer commentLevel0">
+<p></p><p>Thanks for the usefull information....</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Shrikrishna <b>at:</b> <i>2016-12-09 15:05:39</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20710" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20710" class="commentContainer commentLevel0">
+<p></p><p>Thanks mate exellent article.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Eslam Ezzatneshan <b>at:</b> <i>2016-12-13 10:34:49</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20744" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20744" class="commentContainer commentLevel0">
+<p></p><p>Hi,</p>
+<p>Thanks for this helpful article.</p>
+<p>I am trying to install the following open-source package on my virtual-box Ubuntu:<a href="https://github.com/Par4All/par4all">https://github.com/Par4All/par4all</a>To be honest, I am almost new in Ubuntu and don't know so much about git etc.Could you please help me what should I do step-by-step to install that package? Really appreciate your time. Cheers</p>
+<p>Eslam</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Shivam <b>at:</b> <i>2016-12-20 03:14:33</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20823" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20823" class="commentContainer commentLevel0">
+<p></p><p>This is simply helpful.. Can you also cover for rest ??</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> nullbyte <b>at:</b> <i>2016-12-25 17:45:58</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20875" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20875" class="commentContainer commentLevel0">
+<p></p><p>Thanks a lot.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> annie <b>at:</b> <i>2016-12-26 16:05:00</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20877" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20877" class="commentContainer commentLevel0">
+<p></p><p>Too good!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Sagar PAtil <b>at:</b> <i>2017-01-06 04:36:15</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20964" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20964" class="commentContainer commentLevel0">
+<p></p><p>Great man cool article. Very easy and clear steps provided.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Zachary <b>at:</b> <i>2017-01-09 01:09:04</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20994" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20994" class="commentContainer commentLevel0">
+<p></p><p>Basic but very important! Great!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Alok Patra <b>at:</b> <i>2017-01-09 18:33:54</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="20997" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment20997" class="commentContainer commentLevel0">
+<p></p><p>Great detailed explanation. Helped a lot. Thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> martineskobg <b>at:</b> <i>2017-01-11 14:33:03</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21011" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21011" class="commentContainer commentLevel0">
+<p></p><p>Cool Thanks !! :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> p81061473525 <b>at:</b> <i>2017-01-28 15:13:25</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21138" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21138" class="commentContainer commentLevel0">
+<p></p><p>This is great...</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Jona <b>at:</b> <i>2017-02-06 04:50:02</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21215" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21215" class="commentContainer commentLevel0">
+<p></p><p>SO EASY!!!!!!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Antz411 <b>at:</b> <i>2017-03-01 19:28:56</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21447" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21447" class="commentContainer commentLevel0">
+<p></p><p>Excellent work!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Umer <b>at:</b> <i>2017-03-27 18:53:12</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21633" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21633" class="commentContainer commentLevel0">
+<p></p><p>Many thanks for this wonderful how-to...cheers :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Manjesh <b>at:</b> <i>2017-04-03 15:29:48</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="21681" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment21681" class="commentContainer commentLevel0">
+<p></p><p>Dude, Your Tutorials are Awesome .</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ajay <b>at:</b> <i>2017-06-12 07:06:01</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22182" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22182" class="commentContainer commentLevel0">
+<p></p><p>Thanks &nbsp;</p>
+<p>Steps is fine but if some one want to add all directory &nbsp;can use</p>
+<p>git add .</p>
+<p>command&nbsp;</p>
+<p>before doing this change mode of file if required</p>
+<p>&nbsp;</p>
+<p>Thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Wayne B <b>at:</b> <i>2017-06-22 19:09:55</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22279" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22279" class="commentContainer commentLevel0">
+<p></p><p>Hello, very easy and simple instructions for us noobs. Thank You very much for this simple and easy to understand tutorial!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> vishnu <b>at:</b> <i>2017-06-23 06:09:59</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22284" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22284" class="commentContainer commentLevel0">
+<p></p><p>Thanks very useful&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> anvesh <b>at:</b> <i>2017-06-24 07:25:32</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22291" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22291" class="commentContainer commentLevel0">
+<p></p><p>Thanks bro</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> MX1 <b>at:</b> <i>2017-07-26 08:08:42</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22568" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22568" class="commentContainer commentLevel0">
+<p></p><p>Verry cool. Thanks for the awesome tutorial. Helps me get a jump start on installing the new Cuda tool kit on all my machines. Thanks again awesome!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> prasad <b>at:</b> <i>2017-08-04 03:01:17</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22629" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22629" class="commentContainer commentLevel0">
+<p></p><p>very good.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> pk <b>at:</b> <i>2017-08-16 14:02:55</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22719" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22719" class="commentContainer commentLevel0">
+<p></p><p>This is great help! thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> John <b>at:</b> <i>2017-08-24 08:09:37</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22749" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22749" class="commentContainer commentLevel0">
+<p></p><p>Great teaching.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> dhanyesh <b>at:</b> <i>2017-09-16 04:22:45</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22889" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22889" class="commentContainer commentLevel0">
+<p></p><p>Its very useful and effective. Easy to use it</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> rano <b>at:</b> <i>2017-09-26 12:19:19</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22940" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22940" class="commentContainer commentLevel0">
+<p></p><p>Unable to push. NO enter login credentials prompted after running git push origin master.</p>
+<p>fatal: unable to access 'https://github.com/myusername/myproject.git/': Failed to connect to 127.0.0.1 port 8888: Connection refused</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> bluescreen777 <b>at:</b> <i>2017-09-26 20:00:04</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22944" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22944" class="commentContainer commentLevel0">
+<p></p><p>Thank you for the help!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Sravan Chithari <b>at:</b> <i>2017-09-28 09:51:11</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22955" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22955" class="commentContainer commentLevel0">
+<p></p><p>Best article and very helpful :)</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Mike Paget <b>at:</b> <i>2017-09-28 10:29:06</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22956" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22956" class="commentContainer commentLevel0">
+<p></p><p>Good job! i like it</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> mikesmith123456 <b>at:</b> <i>2017-10-02 04:37:58</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="22972" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment22972" class="commentContainer commentLevel0">
+<p></p><p>thank you, thank you thank you.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Tasos <b>at:</b> <i>2017-10-18 17:06:42</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23042" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23042" class="commentContainer commentLevel0">
+<p></p><p>Dude, you are the only one who managed to put an actual useful guide for first time users. Thanks a lot!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Brandon <b>at:</b> <i>2017-11-10 05:06:19</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23172" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23172" class="commentContainer commentLevel0">
+<p></p><p>Perfect tutorial, thank you so much!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Freddy Camacho <b>at:</b> <i>2017-12-20 21:06:11</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23386" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23386" class="commentContainer commentLevel0">
+<p></p><p>Hi, Do you have a tutorial on how to install FROM GitHub via terminal? Thank you</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ravi yadav <b>at:</b> <i>2017-12-30 16:03:28</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23423" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23423" class="commentContainer commentLevel0">
+<p></p><p>Thanks.....this is a great guide for beginners :)))</p>
+<p>&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Darichy <b>at:</b> <i>2018-01-09 02:46:34</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23462" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23462" class="commentContainer commentLevel0">
+<p></p><p>Thats awesome, thanks</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ceero <b>at:</b> <i>2018-02-28 15:52:59</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23809" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23809" class="commentContainer commentLevel0">
+<p></p><p>Thanks for this. It was truly helpful</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Thanku <b>at:</b> <i>2018-03-07 05:34:15</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23853" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23853" class="commentContainer commentLevel0">
+<p></p><p>Thank you so much bro</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> musaah <b>at:</b> <i>2018-03-18 14:36:19</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23921" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23921" class="commentContainer commentLevel0">
+<p></p><p>hello anyone here please i need help</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Froot <b>at:</b> <i>2018-03-19 01:07:42</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23923" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23923" class="commentContainer commentLevel0">
+<p></p><p>Yes this is ok, Thanks.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Zac <b>at:</b> <i>2018-03-28 00:32:54</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="23998" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment23998" class="commentContainer commentLevel0">
+<p></p><p>Thank you so much. OMFG</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> gaurav agarwal <b>at:</b> <i>2018-05-01 18:34:07</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="24204" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment24204" class="commentContainer commentLevel0">
+<p></p><p>Reading package lists... Done Building dependency tree Reading state information... Done Package git is not available, but is referred to by another package. This may mean that the package is missing, has been obsoleted, or is only available from another source E: Package 'git' has no installation candidate this is the result what should iI do ?</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Ludwig <b>at:</b> <i>2018-05-03 05:28:21</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="24214" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment24214" class="commentContainer commentLevel0">
+<p></p><p>Great guide! Thank you very much!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Anon <b>at:</b> <i>2018-06-05 22:15:09</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="24442" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment24442" class="commentContainer commentLevel0">
+<p></p><p>Very useful, thanks.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> dnah <b>at:</b> <i>2018-06-30 01:36:35</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="24658" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment24658" class="commentContainer commentLevel0">
+<p></p><p>thank you a lot</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Vikram Chaudhary <b>at:</b> <i>2018-09-13 10:02:20</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="25292" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment25292" class="commentContainer commentLevel0">
+<p></p><p>Thank you the detailed explanation. It really helped.</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Abhishek Sharma <b>at:</b> <i>2018-11-24 12:04:52</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="25841" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment25841" class="commentContainer commentLevel0">
+<p></p><p>fatal: remote origin already exists.</p>
+<p>this is what i get after&nbsp;</p>
+<p>&nbsp;git remote add origin https://github.com/Abhishek-Shr/Mytest.git</p>
+<p>this&nbsp;</p>
+<p>what shoud i do?</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Abhishek Sharma <b>at:</b> <i>2018-11-24 12:25:57</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="25842" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment25842" class="commentContainer commentLevel0">
+<p></p><p>error: src refspec master does not match any.</p>
+<p>error: failed to push some refs to 'https://github.com/Abhishek-Shr/Mytest.git'</p>
+<p>What is this?</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Kumar Vivek <b>at:</b> <i>2018-11-27 04:31:33</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="25861" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment25861" class="commentContainer commentLevel0">
+<p></p><p>Hi I did all the steps but after step 8th "git push origin master"&nbsp;and after adding this command, it is showing&nbsp;</p>
+<p>Below Error</p>
+<p>&nbsp;</p>
+<p>fatal: The current branch master has no upstream branch.</p>
+<p>To push the current branch and set the remote as upstream, use</p>
+<p>git push --set-upstream origin master</p>
+<p>Please help.&nbsp;</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> eve <b>at:</b> <i>2018-12-16 06:55:42</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="26020" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment26020" class="commentContainer commentLevel0">
+<p></p><p>Unable to push - I guess its because I have activated the 2 -step security</p>
+<p>it ask for username and password. But said it fails:&nbsp;</p>
+<p>remote: Invalid username or password.</p>
+<p>fatal: Authentication failed for 'https://github.com/evezeyl/personal.git/'</p>
+<p>But it never ask for the second step of the authentification. Any solution?</p>
+<p>Best regards, great guide. Thanks!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> sasnasteve <b>at:</b> <i>2019-01-01 13:57:27</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="26138" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment26138" class="commentContainer commentLevel0">
+<p></p><p>Excellent, thanks!!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> sm1km <b>at:</b> <i>2019-01-10 21:30:51</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="26209" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment26209" class="commentContainer commentLevel0">
+<p></p><p>The git push command doesn't work if you have 2FA enabled. If you have it, you have to disable two-factor authentication or create a Personal Access Token (see <a href="https://stackoverflow.com/questions/29297154/github-invalid-username-or-password">https://stackoverflow.com/questions/29297154/github-invalid-username-or-password</a>)</p>
+<p>Great guide btw!</p><p></p>
+</div>
+<div class="commentContainerHead commentLevel0">
+<div class="floatLeft"><b>By:</b> Karthikeyan <b>at:</b> <i>2019-03-18 07:13:39</i></div>
+<div class="floatRight"><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#" data-comment="26708" class="reply-to">Reply</a> &nbsp;</div>
+<div class="clearBoth"></div>
+</div>
+<div id="comment26708" class="commentContainer commentLevel0">
+<p></p><p>Thanks for your tutorial..Great help for me.. </p><p></p>
+</div>
+</div>
+
+<div class="breadBoxBottom">
+<nav>
+<fieldset class="breadcrumb" style="">
+<span class="crumbs">
+<span class="crust homeCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Home</span></a>
+<span class="arrow"><span></span></span>
+</span>
+<span class="crust selectedTabCrumb" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+<a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/" class="crumb" rel="up" itemprop="url"><span itemprop="title">Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide</span></a>
+<span class="arrow"><span>&gt;</span></span>
+</span>
+</span>
+</fieldset>
+</nav>
+</div>
+<script>
+<!--
+
+$(document).on('click', 'a.reply-to', function(e) {
+	e.preventDefault();
+	
+	var self = $(this);
+	var cid = self.attr('data-comment');
+	console.log(cid);
+	if(!cid) return this;
+	
+	$('#commentform').insertAfter('#comment' + cid);
+	$('#reply-to-comment').val(cid);
+	/*tinyMCE.activeEditor.focus();*/
+	var textareaId = 'commentedit';
+	tinyMCE.get(textareaId).remove();
+	tinyMCE.execCommand("mceAddEditor", false, textareaId);
+	tinyMCE.activeEditor.focus();
+});
+//-->
+</script>
+<div style="margin-top:10px;margin-bottom:10px;text-align:center;">
+
+<center>
+
+
+<div id="div-gpt-ad-1527185271042-1" style="height: 90px; width: 728px;">
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527185271042-1'); });
+</script>
+<div id="google_ads_iframe_/1030080/howtoforge_com_article_leaderboard_b_728x90_0__container__" style="border: 0pt none; width: 728px; height: 90px;"></div></div>
+
+</center>
+</div>
+
+
+
+
+</div>
+</div>
+
+<aside>
+<div class="sidebar">
+<div class="section loginButton">
+<div class="secondaryContent">
+<label for="LoginControl" id="SignupButton"><a href="https://www.howtoforge.com/community/login/" class="inner">Sign up now!</a></label>
+</div>
+</div>
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-2">
+
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-5">
+<div class="section infoBlock sharePage">
+<div class="secondaryContent socialMediaIcon">
+<a href="https://twitter.com/howtoforgecom" target="_blank"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/twitter.webp"></a>
+<a href="https://www.facebook.com/howtoforge" target="_blank"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/facebook.webp"></a>
+<a href="https://plus.google.com/+howtoforge/posts" target="_blank"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/googleplus.webp"></a>
+<a href="https://www.howtoforge.com/feed" target="_blank"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/rss.webp"></a>
+</div>
+</div>
+</div>
+<div class="section widget-group-no-name widget-container">
+<div class="secondaryContent widget WidgetFramework_WidgetRenderer_Stats" id="widget-3">
+<p class="mnuinfo">Tutorial Info</p>
+<div class="pairsJustified">
+<dl class="discussionCount">
+<dt>Author:</dt>
+<dd><a href="https://www.howtoforge.com/author/akshay+pai/" rel="author">Akshay Pai</a></dd>
+</dl>
+<dl class="discussionCount">
+<dt>Last updated:</dt>
+<dd>Aug 06, 2018</dd>
+</dl>
+<dl class="discussionCount">
+<dt>Tags:</dt>
+<dd><a href="https://www.howtoforge.com/tutorials/linux/" rel="tag">linux</a>, <a href="https://www.howtoforge.com/tutorials/programming/" rel="tag">programming</a>, <a href="https://www.howtoforge.com/tutorials/ubuntu/" rel="tag">ubuntu</a></dd>
+</dl>
+</div>
+</div>
+</div>
+<script src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/monetization.js.다운로드" type="text/javascript"></script>
+<div class="native-sidebar"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD55QU', 'placement:howtoforge', {
+      target: '.native-sidebar',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+<div class="widget WidgetFramework_WidgetRenderer_ShareThisPage" id="widget-5">
+<div class="section infoBlock sharePage">
+<div class="secondaryContent">
+<p class="mnuinfo mnushare">Share This Page</p>
+<p style="text-align:center;">
+<a href="javascript:window.open(&#39;https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F&#39;, &#39;_blank&#39;, &#39;status=1,height=500,width=360,resizable=0&#39;);void(0);"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-recommend.webp" height="20"></a>
+<a href="javascript:window.open(&#39;https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F&amp;text=Installing+and+using+Git+and+GitHub+on+Ubuntu+Linux%3A+A+beginner%27s+guide&amp;via=howtoforgecom&amp;related=howtoforgecom&#39;, &#39;_blank&#39;, &#39;status=1,height=500,width=360,resizable=0&#39;);void(0);"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-tweet.webp" height="20"></a>
+<a href="https://twitter.com/howtoforgecom/" target="_blank" rel="nofollow"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-follow.webp" height="20"></a>
+<a href="javascript:window.open(&#39;https://plus.google.com/share?url=https%3A%2F%2Fwww.howtoforge.com%2Ftutorial%2Finstall-git-and-github-on-ubuntu%2F&#39;, &#39;_blank&#39;, &#39;status=1,height=500,width=360,resizable=0&#39;);void(0);"><img src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/btn-gplus.webp" height="20"></a>
+</p>
+<p style="color:#EE; font-weight:bold; text-align:center; margin-top:5px;">40.2k Followers</p>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-3043223216276099";
+    google_ad_slot = "6709042890";
+    google_ad_width = 300;
+    google_ad_height = 600;
+</script>
+
+<script type="text/javascript" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/f(4).txt">
+</script>
+
+
+<div class="section widget-group-no-name widget-container">
+<div class="secondaryContent widget WidgetFramework_WidgetRenderer_Stats" id="widget-3">
+<p class="mnuinfo">Popular Tutorials</p>
+<div class="pairsJustified">
+<ul>
+<li><a href="https://www.howtoforge.com/tutorial/linux-grep-command/">How to use grep to search for strings in files on the shell</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-create-docker-images-with-dockerfile/">How to create Docker Images with a Dockerfile</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/">How to use the Linux ftp command to up- and download files on the shell</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tutorial/perfect-server-ubuntu-18.04-with-apache-php-myqsl-pureftpd-bind-postfix-doveot-and-ispconfig/">The Perfect Server - Ubuntu 18.04 (Bionic Beaver) with Apache, PHP, MySQL, PureFTPD, BIND, Postfix, Dovecot and ISPConfig 3.1</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tutorial/linux-search-files-from-the-terminal/">How to search files from the terminal on Linux</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/configure-remote-access-to-your-ubuntu-desktop">How To Configure Remote Access To Your Ubuntu Desktop</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tips-and-tricks-to-secure-your-nginx-web-server/">Tips and Tricks to Secure Your Nginx Web Server</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/tutorial/perfect-server-debian-9-stretch-apache-bind-dovecot-ispconfig-3-1/">The Perfect Server - Debian 9 (Stretch) with Apache, BIND, Dovecot, PureFTPD and ISPConfig 3.1</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/setting-changing-resetting-mysql-root-passwords">Setting, Changing And Resetting MySQL Root Passwords</a></li>
+<li><hr></li>
+<li><a href="https://www.howtoforge.com/c-programming-assignment-operators/">Linux C Programming Tutorial Part 12 - Assignment Operators and Conditional Expressions</a></li>
+<li><hr></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer">
+<div class="pageWidth">
+<div class="pageContent">
+<div class="skin_branding"><span>Xenforo skin by <a href="http://www.xenfocus.com/" rel="nofollow">Xenfocus</a></span></div>
+<ul class="footerLinks">
+<li><a href="https://www.howtoforge.com/contribute/">Contribute</a></li>
+<li><a href="https://www.howtoforge.com/community/misc/contact">Contact</a></li>
+<li><a href="https://www.howtoforge.com/community/help/">Help</a></li>
+<li><a href="https://www.howtoforge.com/imprint/">Imprint and Legal Notice</a></li>
+<li><a href="https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/#navigation" class="topLink">Top</a></li>
+<li><a href="https://www.howtoforge.com/feed" rel="alternate" class="globalFeed" target="_blank" title="RSS-Feed for Howtoforge">RSS-Feed</a></li>
+</ul>
+<span class="helper"></span>
+</div>
+</div>
+</div>
+<div class="footerLegal">
+<div class="pageWidth">
+<div class="pageContent">
+<ul id="legal">
+<li><a href="https://www.howtoforge.com/community/help/terms">Terms and Rules</a> <a href="https://www.howtoforge.com/community/help/privacy-policy">Privacy Policy</a></li>
+</ul>
+<div id="copyright"><a href="https://www.howtoforge.com/" class="concealed">Howtoforge <span>© projektfarm GmbH.</span></a></div>
+<span class="helper"></span>
+</div>
+</div>
+</div>
+</footer>
+<div style="height:100px;"></div>
+
+<div id="subscriptionModal" class="modal">
+<div class="modal-content">
+<span class="close">×</span>
+<p>This feature is only available to subscribers. Get your subscription <a href="https://www.howtoforge.com/subscription">here</a>.</p>
+</div>
+</div>
+<script>
+//* Modal
+var modal = document.getElementById('subscriptionModal');
+var span = document.getElementsByClassName("close")[0];
+$(".pdf-btn").click(function() {
+  $("#subscriptionModal").css('display', 'block');
+});
+$(".print-btn").click(function() {
+  $("#subscriptionModal").css('display', 'block');
+});
+span.onclick = function() {
+	$("#subscriptionModal").css('display', 'none');
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+		$("#subscriptionModal").css('display', 'none');
+    }
+}
+//* Xenforo
+jQuery.extend(true, XenForo,
+{
+	visitor: { user_id: 0 },
+	serverTimeInfo:
+	{
+		now: 1409831907,
+		today: 1409781600,
+		todayDow: 4
+	},
+	_lightBoxUniversal: "0",
+	_enableOverlays: "1",
+	_animationSpeedMultiplier: "1",
+	_overlayConfig:
+	{
+		top: "10%",
+		speed: 200,
+		closeSpeed: 100,
+		mask:
+		{
+			color: "rgb(0, 0, 0)",
+			opacity: "0.6",
+			loadSpeed: 200,
+			closeSpeed: 100
+		}
+	},
+	_ignoredUsers: [],
+	_loadedScripts: {"node_list":true,"node_category":true,"node_forum":true,"sidebar_share_page":true,"wf_default":true,"bbm_buttons":true,"login_bar":true,"twitter":true},
+	_cookieConfig: { path: "/", domain: "", prefix: "xf_"},
+	_csrfToken: "",
+	_csrfRefreshUrl: "/community/login/csrf-token-refresh",
+	_jsVersion: "303ae0ca"
+});
+jQuery.extend(XenForo.phrases,
+{
+	cancel: "Cancel",
+
+	a_moment_ago:    "A moment ago",
+	one_minute_ago:  "1 minute ago",
+	x_minutes_ago:   "%minutes% minutes ago",
+	today_at_x:      "Today at %time%",
+	yesterday_at_x:  "Yesterday at %time%",
+	day_x_at_time_y: "%day% at %time%",
+
+	day0: "Sunday",
+	day1: "Monday",
+	day2: "Tuesday",
+	day3: "Wednesday",
+	day4: "Thursday",
+	day5: "Friday",
+	day6: "Saturday",
+
+	_months: "January,February,March,April,May,June,July,August,September,October,November,December",
+	_daysShort: "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+
+	following_error_occurred: "The following error occurred",
+	server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+	logging_in: "Logging in",
+	click_image_show_full_size_version: "Click this image to show the full-size version.",
+	show_hidden_content_by_x: "Show hidden content by {names}"
+});
+
+// Facebook Javascript SDK
+XenForo.Facebook.appId = "";
+XenForo.Facebook.forceInit = true;
+
+/*
+document.addEventListener('DOMContentLoaded', function(event) {
+  cookieChoices.showCookieConsentBar('Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden.',
+  'OK');
+});
+*/
+
+$(document).ready(function() {
+	$("a.fancybox").fancybox();
+});
+
+</script>
+
+<script>
+(function() {
+  if (typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('fancybar', 'CKYDL27E', 'placement:howtoforgecom');
+  }
+})();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2155872-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/d_vbiawPdxB.html" style="border: none;"></iframe></div><div></div></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/bframe.html" name="c-rti3n9z1uohw" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><iframe name="oauth2relay1544896346" id="oauth2relay1544896346" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" aria-hidden="true" frame-border="0" src="./Installing and using Git and GitHub on Ubuntu Linux_ A beginner&#39;s guide_files/iframe.html" style="position: absolute; width: 1px; height: 1px; left: -9999px; top: -9999px; right: -9999px; bottom: -9999px; display: none;"></iframe></body></html>
