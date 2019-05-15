@@ -45,7 +45,7 @@ ggplot(mapping=aes(Vin,Vout),data=CS_Amp)+
   geom_path(color="blue")+
   #geom_smooth(data=filter(NMOS_Gate,nomVds==3,Vgs<6,Vgs>4),method="lm",se=F)+
   stat_function(fun = function(value) { Get_CS_Out(value,2673.2e-6,2.4,5,988.62) },color="blue")+
-  labs(x="Input Voltage[V]",y="Output Voltage[V]",title=element_text("Common Source Amplifier In-Out Æ¯¼º°î¼±"))
+  labs(x="Input Voltage[V]",y="Output Voltage[V]",title=element_text("Common Source Amplifier In-Out Æ¯???î¼±"))
 
 #for(value in seq(1,5,0.1)) print(Get_CS_Out(value,2673.2e-6,2.4,5,988.62))
 
@@ -61,4 +61,4 @@ ggplot(mapping=aes(Vin,Vout),data=CS_Amp)+
   geom_path(color="blue")+
   #geom_smooth(data=filter(NMOS_Gate,nomVds==3,Vgs<6,Vgs>4),method="lm",se=F)+
   stat_function(fun = function(value) { Get_CS_Out(value,mu,Vth,5,988.62) },color="blue")+
-  labs(x="Input Voltage[V]",y="Output Voltage[V]",title=element_text("Common Source Amplifier In-Out Æ¯¼º°î¼±"))
+  labs(x="Input Voltage[V]",y="Output Voltage[V]",title=element_text("Common Source Amplifier In-Out íŠ¹ì„±ê³¡ì„ "))

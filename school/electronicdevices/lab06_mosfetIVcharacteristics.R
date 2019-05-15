@@ -73,9 +73,11 @@ NMOS_lamb02 <- filter(NMOS_Drain,Vgs==5,Vds>1)
 NMOS_lamb02$Id <- NMOS_lamb02$Id / NMOS_lamb02$Id[[1]]
 lm(Id~Vds,data=NMOS_lamb02)
 
+lm(Id~Vds,data=filter(NMOS_Drain,Vgs==3.5,Vds>.5))
+lm(Id~Vds,data=filter(NMOS_Drain,Vgs==5,Vds>1))
 lm(Id~Vds,data=filter(NMOS_Drain,Vgs==3.5,Vds<.2))
 
-lm(Id~Vds,data=filter(NMOS_Drain,Vgs==5,Vds<.6))
+lm(Id~Vds,data=filter(NMOS_Drain,Vgs==5,Vds<.18))
 
 NMOS_Back <- read_csv("electronics_week5_NMOS03.csv",col_names=T)
 
