@@ -60,5 +60,5 @@ ggplot(mapping=aes(Vin,Vout),data=CS_Amp)+
   geom_point(color="blue")+
   geom_path(color="blue")+
   #geom_smooth(data=filter(NMOS_Gate,nomVds==3,Vgs<6,Vgs>4),method="lm",se=F)+
-  stat_function(fun = function(value) { Get_CS_Out(value,mu,Vth,5,988.62) },color="orange")+
+  stat_function(fun = function(value) { Get_CS_Out(value,mu,Vth,5,988.62) },color="green")+
   labs(x="Input Voltage[V]",y="Output Voltage[V]",title=element_text("Common Source Amplifier In-Out 특성곡선"))
