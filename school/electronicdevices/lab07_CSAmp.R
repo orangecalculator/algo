@@ -38,8 +38,6 @@ CS_Amp <- tribble(
 4.9932,0.4224
 )
 
-CS_Amp
-
 ggplot(mapping=aes(Vin,Vout),data=CS_Amp)+
   geom_point(color="blue")+
   geom_path(color="blue")+
